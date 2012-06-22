@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+ <html>
+  <head>
+    <link rel="stylesheet" href="sc-player-minimal.css" type="text/css" />
+	<style>
+		* {margin: 0; padding: 0;}
+		body {width: 400px; margin: 0 !important;}
+	</style>
+  </head>
+  <body>
+	<div id="wrap">
+		<a href="http://soundcloud.com/matas/hobnotropic" class="sc-player">My new dub track</a>
+	</div>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://cdn.airy.me/postmessage2.js"></script>
+	<script type="text/javascript" src="soundcloud.player.api.js"></script>
+    <script type="text/javascript" src="sc-player.js"></script>
+	<script>
+		$.receiveMessage(function(e) {
+		    parent = e.source;
+			$('.sc-player.playing a.sc-pause').click();
+			$('#wrap').html('<a href="'+e.data+'" class="sc-player">Another track</a>');
+			$('a.sc-player').scPlayer({
+			    autoPlay: true
+			});
+		});
+		$(document).bind('scPlayer:onMediaEnd', function(event, data) {
+            $.postMessage('stop_track', '*', parent);
+        });
+        $(document).bind('scPlayer:onMediaPause', function(event, data) {
+            $.postMessage('stop_track', '*', parent);
+        });
+        $(document).bind('scPlayer:onMediaPlay', function(event, data) {
+            $.postMessage('start_track', '*', parent);
+        });       
+	</script>
+
+	</body>
+ </html>
