@@ -10,7 +10,7 @@ var Sc = {
 	initSearch: function(){
 		switch( $('select[name$="duration"]').val() ){
     	    case "medium": this.minutes_min = 30; break;
-            case "long":   this.minutes_min = 40; break;
+            case "long":   this.minutes_min = 55; break;
         }
         switch( $('select[name$="order"]').val() ){
 	        case("time"):    this.order_by = "created_at"; break;
@@ -33,7 +33,7 @@ var Sc = {
         $("#actions").html("");
         $("#actions").append("<a href='#' class='next'>Load next page</a>");
         $("a.next", "#actions").click(function(event){
-            $(this).hide();
+            //$(this).hide();
             event.preventDefault();
             Sc.page_index++;
             Sc.getTracks();
@@ -44,8 +44,10 @@ var Sc = {
 	getTracks: function(){
         var q = this.query;
 		var offset = this.page_index * this.items_by_page;
-		var minlength = "&duration[from]=" + this.minutes_min * ( 1000 * 20 );
+		var minlength = "&duration[from]=" + this.minutes_min * ( 1000 * 60 );
+		console.log(this.api+'filter='+ this.type +'&order=' + this.order_by + '&limit=' + this.items_by_page + '&offset=' + offset + minlength + '&tags=' + q, Sc.onGetTracks);
 		$.getJSON(this.api+'filter='+ this.type +'&order=' + this.order_by + '&limit=' + this.items_by_page + '&offset=' + offset + minlength + '&tags=' + q, Sc.onGetTracks);
+
 	},
 	
 	onGetTracks: function(e){
