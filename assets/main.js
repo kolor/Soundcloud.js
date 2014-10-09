@@ -12,7 +12,8 @@ $(document).ready(function() {
     
     return false;
   }); 
-  
+
+ 
   $("a", "#tags").click(function(event){
     event.preventDefault();
     $("#search input").val($(this).text());

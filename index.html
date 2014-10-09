@@ -3,6 +3,8 @@
   <head>
     <meta http-equiv="content-type" content="UTF-8" />
     <title>tune.findr</title>
+    <link rel="icon" href="favicon.ico" />
+    <link href='http://fonts.googleapis.com/css?family=Lobster|Ubuntu+Condensed|Roboto+Condensed:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
     <link type="text/css" rel="stylesheet" media="all" href="assets/style.css" />
 	
@@ -12,10 +14,10 @@
 	<script type="text/javascript" charset="utf-8" src="assets/Soundcloud.js"></script>
   </head>
   <body>
-
+  <div id="wrap">
 		<div id="col1">
 	    <div id="search">
-    	    <input type="text" value="" placeholder="search here" />
+    	    <input type="text" value="" placeholder="enter to search" />
     		<div class="options">
     			<select name="min_duration" id="min_duration">
         			<option value="medium">Duration > 30 min</option>
@@ -33,11 +35,14 @@
     		</div>
     	</div>
         
-        <div id="tags"><a href="#">2014</a> 
-        <a href="#">drum and bass</a> <a href="#">liquidfunk</a> <a href="#">jump up</a> <a href="#">neurofunk</a>
-        <a href="#">chillout</a> <a href="#">downtempo</a> <a href="#">ambient</a> <a href="#">lounge</a>  <a href="#">deep</a> 
-        <a href="#">dubstep</a> <a href="#">breaks</a> <a href="#">hiphop</a><a href="#">reggae</a> 
-        <a href="#">trance</a> <a href="#">house</a> <a href="#">vocal</a> </div>    
+        <div id="tags"><a href="#">2014</a> <a href="#">drum and bass</a> 
+        <a href="#">liquidfunk</a> <a href="#">jump up</a> <a href="#">neurofunk</a> <a href="#">breaks</a> 
+        <a href="#">chillout</a> <a href="#">downtempo</a> <a href="#">ambient</a> <a href="#">lounge</a>  <a href="#">deep</a>
+
+        <a href="#">dub</a> <a href="#">dubstep</a>  <a href="#">reggae</a> 
+        <a href="#">trance</a> <a href="#">house</a> <a href="#">vocal</a> 
+                <a href="#">hiphop</a>
+                </div>    
     </div>
     
 	<div id="col2">
@@ -46,9 +51,9 @@
 	    <div id="playlist"></div>
         
     </div>
-<div id="loader"></div>
-    
-    <div id="player"></div>
+    <div id="loader"></div>
+</div>
+    <div id="player">&nbsp;</div>
   </body>
 </html>
 

@@ -31,7 +31,7 @@ var Sc = {
   
         // add next page button
         $("#actions").html("");
-        $("#actions").append("<a href='#' class='next'>Load next page</a>");
+        $("#actions").append("<a href='#' class='next'>Load more mixes</a>");
         $("a.next", "#actions").click(function(event){
             //$(this).hide();
             event.preventDefault();
@@ -84,7 +84,7 @@ var Sc = {
 	},
 	
 	loadTrack: function(url) {
-		$.getJSON('http://soundcloud.com/oembed?format=js&iframe=false&show_comments=false&show_artwork=false&url='+url+'&callback=?', Sc.onLoadTrack);	
+		$.getJSON('http://soundcloud.com/oembed?format=js&color=222228&auto_play=true&iframe=false&show_comments=false&show_artwork=false&url='+url+'&callback=?', Sc.onLoadTrack);	
 	},
 	
 	onLoadTrack: function(e) {
