@@ -32,7 +32,7 @@ input:hover, select:hover, input:focus {background: #fff;}
 #player {height: 82px;}
 #player span {display: none;}
 
-#playlist {height: 415px; overflow: auto; margin-bottom:2px;}
+#playlist {height:535px; overflow: auto; margin-bottom:2px;}
 .odd {background: #404040;}
 
 ul {font-size: 11px; list-style: none; margin: 0; padding: 0;}
@@ -41,7 +41,7 @@ li {clear: both; height: 30px; line-height: 15px; padding: 4px 6px; overflow: hi
 #playlist a {color: #bbb}
 #playlist a:hover {color: #ccc;}
 
-#playlist .left a {font-size: 11px; width: 400px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block;}
+#playlist .left a {font-family: 'Roboto Condensed'; font-size: 11px; width: 400px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block;}
 #playlist .left .info {display: block;}
 #playlist .right a {display: none; margin-right: 5px;}
 #playlist .selected a {color: #222;}
